@@ -13,16 +13,14 @@ import {
   Phone,
   Scissors,
   Sparkles,
-  Star,
   Waves,
   X,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
-const PHONE_DISPLAY = '+1 647-347-9099'
-const PHONE_HREF = 'tel:+16473479099'
-const MAPS_URL = 'https://maps.google.com/?daddr=2588%20Danforth%20Ave%2C%20Toronto%2C%20ON%20M4C%201L3%2C%20Canada'
-const REVIEWS_URL = 'https://www.google.com/search?q=Laymon+Hair+Salon+Toronto+reviews'
+const PHONE_DISPLAY = '+1 (416) 555-0100'
+const PHONE_HREF = 'tel:+14165550100'
+const MAPS_URL = 'https://maps.google.com/?q=Toronto%2C+ON%2C+Canada'
 
 const navItems = [
   { label: 'Services', href: '#services' },
@@ -222,9 +220,9 @@ function Header() {
   return (
     <>
       <header className={`site-header ${isScrolled ? 'is-scrolled' : ''}`}>
-        <a className="brand-mark" href="#top" aria-label="Laymon Hair Salon home">
-          <span>Laymon</span>
-          <small>Hair Salon</small>
+        <a className="brand-mark" href="#top" aria-label="The Salon home">
+          <span>The Salon</span>
+          <small>Hair Studio</small>
         </a>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
@@ -285,7 +283,7 @@ function Hero() {
     <section className="hero" id="top" aria-labelledby="hero-title">
       <div className="container-x hero-grid">
         <div className="hero-copy-block">
-          <p className="hero-kicker reveal">Danforth Village · Toronto · By appointment</p>
+          <p className="hero-kicker reveal">Toronto · By appointment</p>
           <h1 className="hero-title" id="hero-title">
             <span>Hair with</span>
             <span>
@@ -309,7 +307,7 @@ function Hero() {
 
         <div className="hero-art" aria-label="Salon photography collage">
           <span className="hero-word" aria-hidden="true">
-            Laymon
+            Salon
           </span>
           <FramedImage
             src={`${import.meta.env.BASE_URL}images/hero-blowdry.webp`}
@@ -327,17 +325,6 @@ function Hero() {
             <strong>Appointment preferred</strong>
             <span>Open daily · 11 AM—7 PM</span>
           </aside>
-          <a className="hero-rating reveal" href={REVIEWS_URL} target="_blank" rel="noreferrer">
-            <span className="stars" aria-hidden="true">
-              <Star size={15} fill="currentColor" />
-              <Star size={15} fill="currentColor" />
-              <Star size={15} fill="currentColor" />
-              <Star size={15} fill="currentColor" />
-              <Star size={15} />
-            </span>
-            <strong>4.3</strong>
-            <span>60 Google reviews</span>
-          </a>
         </div>
       </div>
 
@@ -438,7 +425,7 @@ function Experience() {
             The craft is quiet. The result is not.
           </h2>
           <p className="experience-lede reveal">
-            Laymon keeps the process focused: understand the hair, agree on the direction, then execute with care. No rushed handoff, no one-size-fits-all finish.
+            The Salon keeps the process focused: understand the hair, agree on the direction, then execute with care. No rushed handoff, no one-size-fits-all finish.
           </p>
 
           <div className="process-list">
@@ -510,7 +497,7 @@ function Booking() {
 
   const message = useMemo(() => {
     const lines = [
-      'Hello Laymon Hair Salon, I would like to request an appointment.',
+      'Hello The Salon, I would like to request an appointment.',
       `Name: ${fields.name}`,
       `Service: ${selectedService}`,
       `Preferred timing: ${fields.day}, ${fields.time}`,
@@ -520,7 +507,7 @@ function Booking() {
     return lines.join('\n')
   }, [fields, selectedService])
 
-  const smsHref = `sms:+16473479099?&body=${encodeURIComponent(message)}`
+  const smsHref = `sms:+14165550100?&body=${encodeURIComponent(message)}`
 
   const updateField = (field: keyof BookingFields, value: string) => {
     setFields((current) => ({ ...current, [field]: value }))
@@ -550,7 +537,7 @@ function Booking() {
             Book before you visit.
           </h2>
           <p className="visit-lede reveal">
-            Laymon is most comfortable taking clients by appointment. Call directly, or prepare a text request with your service and preferred timing.
+            The Salon takes clients by appointment. Call directly, or prepare a text request with your service and preferred timing.
           </p>
 
           <div className="contact-stack">
@@ -566,7 +553,7 @@ function Booking() {
               <MapPin size={22} strokeWidth={1.5} aria-hidden="true" />
               <span>
                 <small>Find the salon</small>
-                <strong>2588 Danforth Ave, Toronto</strong>
+                <strong>Toronto, Ontario</strong>
               </span>
               <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" />
             </a>
@@ -672,7 +659,7 @@ function Booking() {
           <div className={`request-preview ${isPrepared ? 'is-visible' : ''}`} aria-live="polite">
             {isPrepared ? (
               <>
-                <p>Your request is ready. Open it in your messaging app, review it, then send it to Laymon.</p>
+                <p>Your request is ready. Open it in your messaging app, review it, then send it to The Salon.</p>
                 <pre>{message}</pre>
                 <a className="button-secondary" href={smsHref}>
                   Open text message
@@ -692,12 +679,12 @@ function Footer() {
     <footer className="site-footer">
       <div className="container-x footer-grid">
         <a className="footer-word" href="#top" aria-label="Back to top">
-          Laymon
+          Salon
         </a>
         <div>
           <p>Hair Salon & Aesthetics</p>
           <a href={MAPS_URL} target="_blank" rel="noreferrer">
-            2588 Danforth Ave, Toronto, ON M4C 1L3
+            Toronto, Ontario, Canada
           </a>
         </div>
         <div>
@@ -713,7 +700,7 @@ function Footer() {
         </nav>
       </div>
       <div className="container-x footer-bottom">
-        <span>© {new Date().getFullYear()} Laymon Hair Salon</span>
+        <span>© {new Date().getFullYear()} The Salon</span>
         <span>Appointments preferred</span>
       </div>
     </footer>

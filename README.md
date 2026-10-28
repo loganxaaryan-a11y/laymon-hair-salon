@@ -1,9 +1,10 @@
-# Laymon Hair Salon — Danforth Village, Toronto
+# The Salon — Generic Hair Salon Demo, Toronto
 
-Premium single-page site for Laymon Hair Salon, 2588 Danforth Ave, Toronto.
-Appointment-led cuts, colour, balayage, texture services, extensions, braids,
-threading, waxing, facials, and beauty care. Open daily 11 AM – 7 PM.
-Call: +1 647-347-9099
+Generic single-page salon site used as a portfolio demo. Appointment-led
+cuts, colour, balayage, texture services, extensions, braids, threading,
+waxing, facials, and beauty care. Open daily 11 AM – 7 PM.
+Contact details shown on the site are placeholders (fictional 555 number,
+city-level location only).
 
 ## Live site
 
@@ -18,9 +19,14 @@ npm run dev
 
 ## Publish
 
-Pushing to `main` builds and deploys automatically via
-`.github/workflows/pages.yml` (GitHub Pages, GitHub Actions source).
-No manual build or upload step.
+GitHub Pages serves the `gh-pages` branch (root). To publish:
+
+```sh
+npm run build
+# copy dist/ to the gh-pages branch, commit, push
+```
+
+No auto-deploy workflow is wired up; publishing is a manual build + push.
 
 ## Notes
 
